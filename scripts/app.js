@@ -11,6 +11,7 @@
         setInterval( updateHungerTimer, updateStatus() )
         setInterval( updateSleepinessTimer, updateStatus() )
         setInterval( updateBoredomTimer, updateStatus() )
+        setInterval( updateAge, 1000)
 
         //a set time with a set time interval
     })
@@ -50,6 +51,8 @@ const updateStatus = () => {
     }
 }
 
+// 4. make the status of hunger, sleepiness, boredom and age increase on certain interval
+
 const updateHungerTimer = () => {
     hunger++;
     $(".hunger").text(`hunger: ${hunger}`);
@@ -74,8 +77,19 @@ const updateBoredomTimer = () => {
     }
 }
 
-// 4. make the status of hunger, sleepiness, boredom and age increase on certain interval
-
 // 5. make three buttons ( feed, sleep, play ) and make it reduce the status whenever clicked
 
+$('.button_feed').on('click', (event) => {
+    hunger --;
+})
+
+$('.button_sleep').on('click', (event) => {
+    sleepiness --;
+})
+
+$('.button_play').on('click', (event) => {
+    boredom --;
+})
+
 // 6. transform pet's apperance as age increases 
+

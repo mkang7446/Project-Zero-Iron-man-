@@ -1,6 +1,6 @@
 # Tamagotchi-pet
 
-![tamagotchi_project_wireframe](/images/Tamagotchi%20project%20wireframe.pngimages/Tamagotchi project wireframe.png)
+![Tamagotchi project wireframe](https://user-images.githubusercontent.com/92760530/153038373-5c0380b1-14f2-4a03-b203-1bf72021aca5.png)
 
 # MVP
 

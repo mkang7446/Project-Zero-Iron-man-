@@ -1,3 +1,44 @@
 * {
+    box-sizing: border-box;
+}
+
+body {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.shell {
+    width: 400px;
+    height: 600px;
     background-color: aqua;
+    border-radius: 300px 300px;
+}
+
+.petname {
+    margin: 0;
+    text-align: center;
+}
+
+.screen {
+    margin: 50px;
+    width: 250px;
+    height: 350px;
+    background-color: rebeccapurple;
+    position: relative;
+    margin-left: 75px;
+    display: flex;
+    justify-content: center;
+}
+
+.status {
+    display: flex;
+    justify-content: space-around;
+}
+
+.button {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
 }

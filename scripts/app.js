@@ -11,7 +11,7 @@
         setInterval( updateHungerTimer, updateStatus() )
         setInterval( updateSleepinessTimer, updateStatus() )
         setInterval( updateBoredomTimer, updateStatus() )
-        setInterval( updateAge, 1000)
+        setInterval( updateLevel, 1000)
 
         //a set time with a set time interval
     })
@@ -31,7 +31,7 @@
 
 // 3. set scale from 0 to 10 to each status and alert a pet dies if any one of them reaches 10
 
-let age = 1;
+let level = 1;
 let hunger = 0;
 let sleepiness = 0;
 let boredom = 0;
@@ -93,7 +93,7 @@ $('.button_play').on('click', (event) => {
 
 // 6. transform pet's apperance as age increases 
 
-const updateAge = () => {
-    age++;
-    $(".petage").text(`age: ${age}`);
+const updateLevel = () => {
+    level++;
+    $(".petlevel").text(`LeveL: ${level}`);
 }

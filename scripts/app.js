@@ -53,16 +53,25 @@ const updateStatus = () => {
 const updateHungerTimer = () => {
     hunger++;
     $(".hunger").text(`hunger: ${hunger}`);
+    if ( hunger === 10 ) {
+        alert(`${Pet.name} died because you reglected!`)
+    }
 }
 
 const updateSleepinessTimer = () => {
     sleepiness++;
     $(".sleepiness").text(`sleepiness: ${sleepiness}`);
+    if ( sleepiness === 10 ) {
+        alert(`${Pet.name} died because you reglected!`)
+    }
 }
 
 const updateBoredomTimer = () => {
     boredom++;
     $(".boredom").text(`boredom: ${boredom}`);
+    if ( boredom === 10 ) {
+        alert(`${Pet.name} died because you reglected!`)
+    }
 }
 
 // 4. make the status of hunger, sleepiness, boredom and age increase on certain interval

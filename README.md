@@ -1,8 +1,8 @@
 # Tamagotchi-pet
 
-Wireframe = "https://excalidraw.com/#json=34Am6km-hNLu01ghr2zZ8,oquduVkX8_s2kyJB4LKPNw"
+![tamagotchi_project_wireframe](images/Tamagotchi project wireframe.png)
 
-MVP
+# MVP
 
 1. create a input function which takes pet's name and display
 

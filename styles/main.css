@@ -42,3 +42,24 @@ body {
     justify-content: space-around;
     align-items: flex-end;
 }
+
+iframe {
+    pointer-events: none;
+}
+
+.modal-dialog {
+    text-align: center;
+}
+
+.modal-header {
+    font-size: 60px;
+}
+
+.btn-primary {
+    margin: 10px;
+    width: 30%;
+    display:flex;
+    text-align: center;
+    justify-content: center;
+}
+

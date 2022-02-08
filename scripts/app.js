@@ -13,7 +13,6 @@
         setInterval( updateBoredomTimer, updateStatus() )
         setInterval( updateLevel, 1000)
 
-        //a set time with a set time interval
     })
 
 
@@ -57,7 +56,8 @@ const updateHungerTimer = () => {
     hunger++;
     $(".hunger").text(`hunger: ${hunger}`);
     if ( hunger === 10 ) {
-        alert(`${Pet.name} died because you reglected!`)
+        alert(`You reglected Iron-man. Mission failed`)
+        // <iframe src="https://giphy.com/embed/7JHtlG3rEkyLLZ1JCs" width="315" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/bosslogic-marvel-iron-man-7JHtlG3rEkyLLZ1JCs">via GIPHY</a></p>
     }
 }
 
@@ -65,7 +65,8 @@ const updateSleepinessTimer = () => {
     sleepiness++;
     $(".sleepiness").text(`sleepiness: ${sleepiness}`);
     if ( sleepiness === 10 ) {
-        alert(`${Pet.name} died because you reglected!`)
+        alert(`You reglected Iron-man. Mission failed`)
+          // <iframe src="https://giphy.com/embed/7JHtlG3rEkyLLZ1JCs" width="315" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/bosslogic-marvel-iron-man-7JHtlG3rEkyLLZ1JCs">via GIPHY</a></p>
     }
 }
 
@@ -73,7 +74,8 @@ const updateBoredomTimer = () => {
     boredom++;
     $(".boredom").text(`boredom: ${boredom}`);
     if ( boredom === 10 ) {
-        alert(`${Pet.name} died because you reglected!`)
+        alert(`You reglected Iron-man. Mission failed`)
+          // <iframe src="https://giphy.com/embed/7JHtlG3rEkyLLZ1JCs" width="315" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/bosslogic-marvel-iron-man-7JHtlG3rEkyLLZ1JCs">via GIPHY</a></p>
     }
 }
 
@@ -96,4 +98,39 @@ $('.button_play').on('click', (event) => {
 const updateLevel = () => {
     level++;
     $(".petlevel").text(`LeveL: ${level}`);
+
+    if ( level === 5 ) {
+        $('.description').text('brain storming...')
+        //<iframe src="https://giphy.com/embed/116a8zosxwA0SI" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/robert-downey-jr-sigh-confused-116a8zosxwA0SI">via GIPHY</a></p>
+    }
+
+    if ( level === 10 ) {
+        $('.description').text('finally made first suit')
+        //<iframe src="https://giphy.com/embed/lXo8uSnIkaB9e" width="480" height="305" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/robert-downey-jr-marvel-iron-man-lXo8uSnIkaB9e">via GIPHY</a></p>
+    }
+
+    if ( level === 20 ) {
+        $('.description').text('War-Machine joined')
+        //<iframe src="https://giphy.com/embed/rgNQDcVkS4pj2" width="480" height="392" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/iron-man-guns-badass-rgNQDcVkS4pj2">via GIPHY</a></p>
+    }
+
+    if ( level === 30 ) {
+        $('.description').text('Iron-Woman joined')
+        //<iframe src="https://giphy.com/embed/Yr0WpfGegdgcdqZXcL" width="480" height="204" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/boxofficebuz-ironman-avengers-endgame-pepper-potts-Yr0WpfGegdgcdqZXcL">via GIPHY</a></p>
+    }
+
+    if ( level === 40 ) {
+        $('.description').text('hulk burster, ready to go')
+        //<iframe src="https://giphy.com/embed/3oxHQATtRER8NkKGOc" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/marvelstudios-marvel-avengers-3oxHQATtRER8NkKGOc">via GIPHY</a></p>
+    }
+
+    if ( level === 50 ) {
+        $('.description').text('Avengers, Assemble!')
+        //<iframe src="https://giphy.com/embed/j2pWZpr5RlpCodOB0d" width="480" height="202" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/nerdist-marvel-endgame-avengers-j2pWZpr5RlpCodOB0d">via GIPHY</a></p>
+    }
+
+    if ( level === 60 ) {
+        $('.description').text('Thanos got retired')
+        //<iframe src="https://giphy.com/embed/QyseiNCTb6ZNiCEgpF" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/morphin-champagne-thanos-endgame-QyseiNCTb6ZNiCEgpF">via GIPHY</a></p>
+    }
 }

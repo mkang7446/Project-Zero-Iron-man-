@@ -93,3 +93,7 @@ $('.button_play').on('click', (event) => {
 
 // 6. transform pet's apperance as age increases 
 
+const updateAge = () => {
+    age++;
+    $(".petage").text(`age: ${age}`);
+}

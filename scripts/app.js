@@ -1,5 +1,14 @@
 // 1. create a input function which takes pet's name and display
 
+    $("#petnameButton").on('click', (event) => {
+
+        event.preventDefault();
+
+        const userInput = $("#petnameInput").val();
+
+        $(".petname").text(`name: ${userInput}`)
+
+    })
 
 
 // 2. set pet as object with status (hunger, sleepiness, boredom, age)

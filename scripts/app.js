@@ -7,21 +7,21 @@ let boredom = 0;
 const updateStatus = () => {
     const randomNum = Math.floor(Math.random() * 5);
     if ( randomNum === 0 ) {
-        return 900;
-    } else if ( randomNum === 1 ) {
         return 1000;
-    } else if ( randomNum === 2 ) {
+    } else if ( randomNum === 1 ) {
         return 1100;
-    } else if ( randomNum === 3 ) {
+    } else if ( randomNum === 2 ) {
         return 1200;
-    } else {
+    } else if ( randomNum === 3 ) {
         return 1300;
+    } else {
+        return 1400;
     }
 };
 
 const updateLevel = () => {
     level++;
-    $(".petlevel").text(`LeveL: ${level}`);
+    $(".petlevel").text(`LEVEL:  ${level}`);
 
     if ( level === 10 ) {
         $('.description').text('finally made first suit')
@@ -110,12 +110,15 @@ const updateBoredomTimer = () => {
 
         const userInput = $(".form-control").val();
 
-        $(".petname").text(`name: ${userInput}`)
+        $(".petname").text(`NAME: ${userInput}`)
+        if ( userInput === '' ) {
+            $(".petname").text(`NAME: IRON-MAN`)
+        }
 
         intervalHunger();
-        intervalSleep()
-        intervalBoredom()
-        intervalLevel()
+        intervalSleep();
+        intervalBoredom();
+        intervalLevel();
 
 
     });

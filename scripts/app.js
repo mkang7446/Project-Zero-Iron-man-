@@ -7,15 +7,15 @@ let boredom = 0;
 const updateStatus = () => {
     const randomNum = Math.floor(Math.random() * 5);
     if ( randomNum === 0 ) {
-        return 700;
-    } else if ( randomNum === 1 ) {
-        return 800;
-    } else if ( randomNum === 2 ) {
         return 900;
-    } else if ( randomNum === 3 ) {
+    } else if ( randomNum === 1 ) {
         return 1000;
-    } else {
+    } else if ( randomNum === 2 ) {
         return 1100;
+    } else if ( randomNum === 3 ) {
+        return 1200;
+    } else {
+        return 1300;
     }
 };
 
@@ -54,7 +54,7 @@ const updateHungerTimer = () => {
     $(".hunger").text(`hunger: ${hunger}`);
     if ( hunger === 10 ) {
         gameOver();
-        // $(".modal fade").modal('show');
+        $("#staticBackdrop").modal('show');
     }
 };
 
@@ -63,7 +63,7 @@ const updateSleepinessTimer = () => {
     $(".sleepiness").text(`sleepiness: ${sleepiness}`);
     if ( sleepiness === 10 ) {
         gameOver();
-        // $(".modal fade").modal('show');
+        $("#staticBackdrop").modal('show');
     }
 };
 
@@ -72,10 +72,31 @@ const updateBoredomTimer = () => {
     $(".boredom").text(`boredom: ${boredom}`);
     if ( boredom === 10 ) {
         gameOver();
-        // $(".modal fade").modal('show');
+        $("#staticBackdrop").modal('show');
     }
 };
 
+    let hungerTimer;
+    let sleepTimer;
+    let boredomTimer;
+    let levelTimer;
+
+
+    let intervalHunger = function() {
+        hungerTimer = setInterval( updateHungerTimer, updateStatus() )
+    }
+
+    let intervalSleep = function() {
+        sleepTimer = setInterval( updateSleepinessTimer, updateStatus() )
+    }
+
+    let intervalBoredom = function() {
+        boredomTimer = setInterval( updateBoredomTimer, updateStatus() )
+    }
+
+    let intervalLevel = function() {
+        levelTimer = setInterval( updateLevel, 2000)
+    }
 
     $(document).ready(function(){
         $("#myModal").modal('show');
@@ -91,43 +112,60 @@ const updateBoredomTimer = () => {
 
         $(".petname").text(`name: ${userInput}`)
 
-        setInterval( updateHungerTimer, updateStatus() )
-        setInterval( updateSleepinessTimer, updateStatus() )
-        setInterval( updateBoredomTimer, updateStatus() )
-        setInterval( updateLevel, 2000)
+        intervalHunger();
+        intervalSleep()
+        intervalBoredom()
+        intervalLevel()
+
 
     });
 
 
 const gameOver = (event) => {
 
-    clearInterval( setInterval( updateHungerTimer, updateStatus() ))
-    clearInterval( setInterval( updateHungerTimer, updateStatus() ))
-    clearInterval( setInterval( updateHungerTimer, updateStatus() ))
-    clearInterval( setInterval( updateHungerTimer, updateStatus() ))
+    clearInterval( hungerTimer )
+    clearInterval( sleepTimer )
+    clearInterval( boredomTimer )
+    clearInterval( levelTimer )
 
-    // $(".btn_playagain").on('click', (event) => {
+    $(".btn_playagain").on('click', (event) => {
 
-        // setInterval( updateHungerTimer, updateStatus() )
-        // setInterval( updateHungerTimer, updateStatus() )
-        // setInterval( updateHungerTimer, updateStatus() )
-        // setInterval( updateHungerTimer, updateStatus() )
+        $("#staticBackdrop").modal('hide')
 
-    //     event.preventDefault();
+        level = 1;
+        hunger = 0;
+        sleepiness = 0;
+        boredom = 0;
+
+        $(".hunger").text(`hunger: ${hunger}`);
+        $(".sleepiness").text(`sleepiness: ${sleepiness}`);
+        $(".boredom").text(`boredom: ${boredom}`);
+        $(".petlevel").text(`LeveL: ${level}`);
+        
+        
+        intervalHunger();
+        intervalSleep()
+        intervalBoredom()
+        intervalLevel()
+
+        event.preventDefault();
 
         
-    // })
+    })
 
 };
 
 $('.button_feed').on('click', (event) => {
     hunger --;
+    $(".hunger").text(`hunger: ${hunger}`);
 });
 
 $('.button_sleep').on('click', (event) => {
     sleepiness --;
+    $(".sleepiness").text(`sleepiness: ${sleepiness}`);
 });
 
 $('.button_play').on('click', (event) => {
     boredom --;
+    $(".boredom").text(`boredom: ${boredom}`);
 });

@@ -1,10 +1,16 @@
 // 1. create a input function which takes pet's name and display
 
-    $("#petnameButton").on('click', (event) => {
+    $(document).ready(function(){
+        $("#myModal").modal('show');
+    });
+
+    $(".btn-primary").on('click', (event) => {
 
         event.preventDefault();
 
-        const userInput = $("#petnameInput").val();
+        $("#myModal").modal('hide')
+
+        const userInput = $(".form-control").val();
 
         $(".petname").text(`name: ${userInput}`)
 

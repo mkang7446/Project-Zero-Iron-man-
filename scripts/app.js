@@ -17,7 +17,7 @@
         setInterval( updateHungerTimer, updateStatus() )
         setInterval( updateSleepinessTimer, updateStatus() )
         setInterval( updateBoredomTimer, updateStatus() )
-        setInterval( updateLevel, 1000)
+        setInterval( updateLevel, 2000)
 
     })
 
@@ -62,8 +62,8 @@ const updateHungerTimer = () => {
     hunger++;
     $(".hunger").text(`hunger: ${hunger}`);
     if ( hunger === 10 ) {
-        alert(`You reglected Iron-man. Mission failed`)
-        // <iframe src="https://giphy.com/embed/7JHtlG3rEkyLLZ1JCs" width="315" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/bosslogic-marvel-iron-man-7JHtlG3rEkyLLZ1JCs">via GIPHY</a></p>
+        $(".modal fade").modal('show');
+        endGame();
     }
 }
 
@@ -71,8 +71,8 @@ const updateSleepinessTimer = () => {
     sleepiness++;
     $(".sleepiness").text(`sleepiness: ${sleepiness}`);
     if ( sleepiness === 10 ) {
-        alert(`You reglected Iron-man. Mission failed`)
-          // <iframe src="https://giphy.com/embed/7JHtlG3rEkyLLZ1JCs" width="315" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/bosslogic-marvel-iron-man-7JHtlG3rEkyLLZ1JCs">via GIPHY</a></p>
+        $(".modal fade").modal('show');
+        endGame();
     }
 }
 
@@ -80,9 +80,24 @@ const updateBoredomTimer = () => {
     boredom++;
     $(".boredom").text(`boredom: ${boredom}`);
     if ( boredom === 10 ) {
-        alert(`You reglected Iron-man. Mission failed`)
-          // <iframe src="https://giphy.com/embed/7JHtlG3rEkyLLZ1JCs" width="315" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/bosslogic-marvel-iron-man-7JHtlG3rEkyLLZ1JCs">via GIPHY</a></p>
-    }
+        $(".modal fade").modal('show');
+        endGame();
+}
+}
+
+const endGame = (event) => {
+
+    $(".btn_playagain").on('click', (event) => {
+
+        event.preventDefault();
+        
+        setInterval( updateHungerTimer, updateStatus() )
+        setInterval( updateSleepinessTimer, updateStatus() )
+        setInterval( updateBoredomTimer, updateStatus() )
+        setInterval( updateLevel, 2000)
+        
+    })
+
 }
 
 // 5. make three buttons ( feed, sleep, play ) and make it reduce the status whenever clicked

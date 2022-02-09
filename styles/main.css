@@ -3,6 +3,8 @@
 }
 
 body {
+    background-image: url(https://cdn.pixabay.com/photo/2016/10/20/18/35/earth-1756274_1280.jpg);
+    background-size: cover;
     padding: 75px;
     display:flex;
     flex-direction: column;
@@ -15,8 +17,16 @@ body {
     justify-content: space-around;
 }
 
+.shell {
+    padding: 30px;
+    color: white;
+    border: 5px solid gold;
+}
+
 .image {
+    margin-left: 20px;
     padding: 5px;
+    color: white;
 }
 
 .petname, .petlevel {
@@ -28,12 +38,14 @@ body {
     padding: 30px;
     display: flex;
     align-items: center;
+    color: white;
 }
 
 .status {
     display: flex;
     justify-content: space-around;
     padding: 0 0 50px;
+    color: white;
 }
 
 .button {
@@ -45,6 +57,10 @@ body {
 
 iframe {
     pointer-events: none;
+}
+
+#myModal {
+    color: black;
 }
 
 .modal-dialog {

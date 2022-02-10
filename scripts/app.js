@@ -113,7 +113,7 @@ const updateBoredomTimer = () => {
     }
 
     let intervalLevel = function() {
-        levelTimer = setInterval( updateLevel, 100)
+        levelTimer = setInterval( updateLevel, 800)
     }
 
     $(document).ready(function(){

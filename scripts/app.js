@@ -24,28 +24,28 @@ const updateLevel = () => {
     $(".petlevel").text(`LEVEL:  ${level}`);
 
     if ( level === 10 ) {
-        $('.description').text('I built the first Iron-man suit!!, but not enough..')
+        // $('.description').text('I built the first Iron-man suit!!, but not enough..')
         $(".giphy-initial").attr("src", `https://giphy.com/embed/lXo8uSnIkaB9e`)
     }
 
     if ( level === 20 ) {
-        $('.description').text('War-machine created!')
+        // $('.description').text('War-machine created!')
         $(".giphy-initial").attr("src", `https://giphy.com/embed/rgNQDcVkS4pj2`)
     }
 
     if ( level === 30 ) {
-        $('.description').text('Iron-Women joined the force!')
+        // $('.description').text('Iron-Women joined the force!')
         $(".giphy-initial").attr("src", `https://giphy.com/embed/Yr0WpfGegdgcdqZXcL`)
     }
 
     if ( level === 40 ) {
-        $('.description').text('Hulk Buster is here!')
+        // $('.description').text('Hulk Buster is here!')
         $(".giphy-initial").attr("src", `https://giphy.com/embed/3oxHQATtRER8NkKGOc`)
     }
 
     if ( level === 50 ) {
-        $('.description').text('Avengers~ Assemble..!')
-        $(".giphy-initial").attr("src", `https://giphy.com/embed/j2pWZpr5RlpCodOB0d`)
+        // $('.description').text('Avengers~ Assemble..!')
+        $(".giphy-initial").attr("src", `https://giphy.com/embed/c0NwRD0Vi5Cta`)
     }
 
     if ( level === 60 ) {
@@ -157,6 +157,8 @@ const gameOver = (event) => {
         sleepiness = 0;
         boredom = 0;
 
+        $(".giphy-initial").attr("src", `https://giphy.com/embed/116a8zosxwA0SI`)
+
         $(".hunger").text(`hunger: ${hunger}`);
         $(".sleepiness").text(`sleepiness: ${sleepiness}`);
         $(".boredom").text(`boredom: ${boredom}`);
@@ -191,10 +193,12 @@ const  missionComplete= (event) => {
         sleepiness = 0;
         boredom = 0;
 
-        $(".hunger").text(`hunger: ${hunger}`);
-        $(".sleepiness").text(`sleepiness: ${sleepiness}`);
-        $(".boredom").text(`boredom: ${boredom}`);
-        $(".petlevel").text(`LeveL: ${level}`);
+        $(".giphy-initial").attr("src", `https://giphy.com/embed/116a8zosxwA0SI`)
+
+        $(".hunger").text(`HUNGER: ${hunger}`);
+        $(".sleepiness").text(`SLEPPINESS: ${sleepiness}`);
+        $(".boredom").text(`BOREDOM: ${boredom}`);
+        $(".petlevel").text(`LEVEL: ${level}`);
         
         
         intervalHunger();

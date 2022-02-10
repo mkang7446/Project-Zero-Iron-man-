@@ -36,10 +36,12 @@
   <section class="shell" >
     <div id="information">
     <h2 class="petname">NAME: IRON-MAN</h2>
-    <h2 class="petlevel">LEVEL: 1</h2>
+    <h2 class="petlevel">LEVEL:  1</h2>
   </div>
 
-  <section class="description">Oh shoot... what should I do? (brainstorming)</section>
+  <!-- <section class="description">
+    <p class="explaination"> brainstorming how to smash Thanos</p>
+  </section> -->
 
     <section>
       <div class="image">
@@ -47,33 +49,38 @@
       </div>
     </section>
 
+    <section id="console">
+
     <section class="status">
-      <div class="hunger">hunger: 0</div>
-      <div class="sleepiness">sleepiness: 0</div>
-      <div class="boredom">boredom: 0</div>
+      <div class="hunger">HUNGER: 0</div>
+      <div class="sleepiness">SLEEPINESS: 0</div>
+      <div class="boredom">BOREDOM: 0</div>
 
     </section>
 
     <section class="button">
-      <button class="button_feed">FEED</button>
-      <button class="button_sleep">SLEEP</button>
-      <button class="button_play">PLAY</button>
+      <button id="btn" class="button_feed">FEED</button>
+      <button id="btn" class="button_sleep">SLEEP</button>
+      <button id="btn" class="button_play">PLAY</button>
       
     </section>
+
+  </section>
 
     
   </section>
 
-  <!-- I copied and pasted the below two modal forms from https://getbootstrap.com/docs/4.0/components/modal/ -->
+  <!-- I copied and pasted the below modal form from https://getbootstrap.com/docs/4.0/components/modal/ -->
 
   <!-- Modal (Game start) -->
 
 </head>
 <body>
 <div id="myModal" class="modal fade">
+  <!-- data-bs-backdrop="static" data-bs-keyboard="false" -->
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header-gamestart">
                 <p class="modal-title">Thanos is coming!</p>
             </div>
             <iframe src="https://giphy.com/embed/aqMY57vLdkghi" width="500" height="300" frameBorder="0" class="giphy-gamestart"></iframe>
@@ -98,11 +105,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">GAME OVER</h5>
-        <iframe src="https://giphy.com/embed/7JHtlG3rEkyLLZ1JCs" width="315" height="480" frameBorder="0" class="giphy-gameover" allowFullScreen></iframe>
+        <h5 class="modal-title-gameover" id="staticBackdropLabel">GAME OVER</h5>
+      
       </div>
       <div class="modal-body">
-        ...
+        <iframe src="https://giphy.com/embed/7JHtlG3rEkyLLZ1JCs" width="415" height="680" frameBorder="0" class="giphy-gameover" allowFullScreen></iframe>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn_playagain">PLAY AGAIN</button>
@@ -115,11 +122,10 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">You smashed Thanos!!</h5>
-        <iframe src="https://giphy.com/embed/QyseiNCTb6ZNiCEgpF" width="315" height="480" frameBorder="0" class="giphy-gameover" allowFullScreen></iframe>
+        <h1 class="modal-title" id="staticBackdropLabel">You retired Thanos!!</h1>
       </div>
       <div class="modal-body">
-        ...
+        <iframe src="https://giphy.com/embed/QyseiNCTb6ZNiCEgpF" width="415" height="480" frameBorder="0" class="giphy-gameover" allowFullScreen></iframe>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn_missionComplete">PLAY AGAIN</button>

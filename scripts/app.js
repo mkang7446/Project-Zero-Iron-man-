@@ -49,8 +49,8 @@ const updateLevel = () => {
     }
 
     if ( level === 60 ) {
-        $('.description').text('Avengers~ Assemble..!')
-        $(".giphy-initial").attr("src", `https://giphy.com/embed/QyseiNCTb6ZNiCEgpF`)
+        missionComplete();
+        $("#modal_missionCompleted").modal('show');
     }
 };
 
@@ -151,6 +151,40 @@ const gameOver = (event) => {
     $(".btn_playagain").on('click', (event) => {
 
         $("#staticBackdrop").modal('hide')
+
+        level = 1;
+        hunger = 0;
+        sleepiness = 0;
+        boredom = 0;
+
+        $(".hunger").text(`hunger: ${hunger}`);
+        $(".sleepiness").text(`sleepiness: ${sleepiness}`);
+        $(".boredom").text(`boredom: ${boredom}`);
+        $(".petlevel").text(`LeveL: ${level}`);
+        
+        
+        intervalHunger();
+        intervalSleep()
+        intervalBoredom()
+        intervalLevel()
+
+        event.preventDefault();
+
+        
+    })
+
+};
+
+const  missionComplete= (event) => {
+
+    clearInterval( hungerTimer )
+    clearInterval( sleepTimer )
+    clearInterval( boredomTimer )
+    clearInterval( levelTimer )
+
+    $(".btn_missionComplete").on('click', (event) => {
+
+        $("#modal_missionCompleted").modal('hide')
 
         level = 1;
         hunger = 0;

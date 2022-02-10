@@ -24,34 +24,44 @@ const updateLevel = () => {
     $(".petlevel").text(`LEVEL:  ${level}`);
 
     if ( level === 10 ) {
-        $('.description').text('finally made first suit')
+        $('.description').text('I built the first Iron-man suit!!, but not enough..')
         $(".giphy-initial").attr("src", `https://giphy.com/embed/lXo8uSnIkaB9e`)
     }
 
     if ( level === 20 ) {
+        $('.description').text('War-machine created!')
         $(".giphy-initial").attr("src", `https://giphy.com/embed/rgNQDcVkS4pj2`)
     }
 
     if ( level === 30 ) {
+        $('.description').text('Iron-Women joined the force!')
         $(".giphy-initial").attr("src", `https://giphy.com/embed/Yr0WpfGegdgcdqZXcL`)
     }
 
     if ( level === 40 ) {
+        $('.description').text('Hulk Buster is here!')
         $(".giphy-initial").attr("src", `https://giphy.com/embed/3oxHQATtRER8NkKGOc`)
     }
 
     if ( level === 50 ) {
+        $('.description').text('Avengers~ Assemble..!')
         $(".giphy-initial").attr("src", `https://giphy.com/embed/j2pWZpr5RlpCodOB0d`)
     }
 
     if ( level === 60 ) {
+        $('.description').text('Avengers~ Assemble..!')
         $(".giphy-initial").attr("src", `https://giphy.com/embed/QyseiNCTb6ZNiCEgpF`)
     }
 };
 
 const updateHungerTimer = () => {
     hunger++;
+    if ( hunger < 0 ) {
+        hunger = 0;
+        $(".hunger").text(`hunger: 0`)
+    }
     $(".hunger").text(`hunger: ${hunger}`);
+    
     if ( hunger === 10 ) {
         gameOver();
         $("#staticBackdrop").modal('show');
@@ -60,6 +70,10 @@ const updateHungerTimer = () => {
 
 const updateSleepinessTimer = () => {
     sleepiness++;
+    if ( sleepiness < 0 ) {
+        sleepiness = 0;
+        $(".sleepiness").text(`sleepiness: 0`)
+    }
     $(".sleepiness").text(`sleepiness: ${sleepiness}`);
     if ( sleepiness === 10 ) {
         gameOver();
@@ -69,6 +83,10 @@ const updateSleepinessTimer = () => {
 
 const updateBoredomTimer = () => {
     boredom++;
+    if ( boredom < 0 ) {
+        boredom = 0;
+        $(".boredom").text(`boredom: 0`)
+    }
     $(".boredom").text(`boredom: ${boredom}`);
     if ( boredom === 10 ) {
         gameOver();
@@ -95,7 +113,7 @@ const updateBoredomTimer = () => {
     }
 
     let intervalLevel = function() {
-        levelTimer = setInterval( updateLevel, 2000)
+        levelTimer = setInterval( updateLevel, 100)
     }
 
     $(document).ready(function(){
@@ -119,7 +137,6 @@ const updateBoredomTimer = () => {
         intervalSleep();
         intervalBoredom();
         intervalLevel();
-
 
     });
 

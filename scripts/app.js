@@ -58,9 +58,9 @@ const updateHungerTimer = () => {
     hunger++;
     if ( hunger < 0 ) {
         hunger = 0;
-        $(".hunger").text(`hunger: 0`)
+        $(".hunger").text(`HUNGER: 0`)
     }
-    $(".hunger").text(`hunger: ${hunger}`);
+    $(".hunger").text(`HUNGER: ${hunger}`);
     
     if ( hunger === 10 ) {
         gameOver();
@@ -72,9 +72,9 @@ const updateSleepinessTimer = () => {
     sleepiness++;
     if ( sleepiness < 0 ) {
         sleepiness = 0;
-        $(".sleepiness").text(`sleepiness: 0`)
+        $(".sleepiness").text(`SLEPPINESS: 0`)
     }
-    $(".sleepiness").text(`sleepiness: ${sleepiness}`);
+    $(".sleepiness").text(`SLEPPINESS: ${sleepiness}`);
     if ( sleepiness === 10 ) {
         gameOver();
         $("#staticBackdrop").modal('show');
@@ -85,9 +85,9 @@ const updateBoredomTimer = () => {
     boredom++;
     if ( boredom < 0 ) {
         boredom = 0;
-        $(".boredom").text(`boredom: 0`)
+        $(".boredom").text(`BOREDOM: 0`)
     }
-    $(".boredom").text(`boredom: ${boredom}`);
+    $(".boredom").text(`BOREDOM: ${boredom}`);
     if ( boredom === 10 ) {
         gameOver();
         $("#staticBackdrop").modal('show');
@@ -148,7 +148,14 @@ const gameOver = (event) => {
     clearInterval( boredomTimer )
     clearInterval( levelTimer )
 
+    
+
     $(".btn_playagain").on('click', (event) => {
+
+        clearInterval( hungerTimer )
+        clearInterval( sleepTimer )
+        clearInterval( boredomTimer )
+        clearInterval( levelTimer )
 
         $("#staticBackdrop").modal('hide')
 
@@ -159,9 +166,9 @@ const gameOver = (event) => {
 
         $(".giphy-initial").attr("src", `https://giphy.com/embed/116a8zosxwA0SI`)
 
-        $(".hunger").text(`hunger: ${hunger}`);
-        $(".sleepiness").text(`sleepiness: ${sleepiness}`);
-        $(".boredom").text(`boredom: ${boredom}`);
+        $(".hunger").text(`HUNGER: ${hunger}`);
+        $(".sleepiness").text(`SLEPPINESS: ${sleepiness}`);
+        $(".boredom").text(`BOREDOM: ${boredom}`);
         $(".petlevel").text(`LEVEL: ${level}`);
         
         
@@ -178,13 +185,17 @@ const gameOver = (event) => {
 };
 
 const  missionComplete= (event) => {
-
-    clearInterval( hungerTimer )
-    clearInterval( sleepTimer )
-    clearInterval( boredomTimer )
-    clearInterval( levelTimer )
+        clearInterval( hungerTimer )
+        clearInterval( sleepTimer )
+        clearInterval( boredomTimer )
+        clearInterval( levelTimer )
 
     $(".btn_missionComplete").on('click', (event) => {
+
+        clearInterval( hungerTimer )
+        clearInterval( sleepTimer )
+        clearInterval( boredomTimer )
+        clearInterval( levelTimer )
 
         $("#modal_missionCompleted").modal('hide')
 
@@ -215,15 +226,15 @@ const  missionComplete= (event) => {
 
 $('.button_feed').on('click', (event) => {
     hunger --;
-    $(".hunger").text(`hunger: ${hunger}`);
+    $(".hunger").text(`HUNGER: ${hunger}`);
 });
 
 $('.button_sleep').on('click', (event) => {
     sleepiness --;
-    $(".sleepiness").text(`sleepiness: ${sleepiness}`);
+    $(".sleepiness").text(`SLEPPINESS: ${sleepiness}`);
 });
 
 $('.button_play').on('click', (event) => {
     boredom --;
-    $(".boredom").text(`boredom: ${boredom}`);
+    $(".boredom").text(`BOREDOM: ${boredom}`);
 });

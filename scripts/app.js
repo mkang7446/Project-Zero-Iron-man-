@@ -162,7 +162,7 @@ const gameOver = (event) => {
         $(".hunger").text(`hunger: ${hunger}`);
         $(".sleepiness").text(`sleepiness: ${sleepiness}`);
         $(".boredom").text(`boredom: ${boredom}`);
-        $(".petlevel").text(`LeveL: ${level}`);
+        $(".petlevel").text(`LEVEL: ${level}`);
         
         
         intervalHunger();

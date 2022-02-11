@@ -72,9 +72,9 @@ const updateSleepinessTimer = () => {
     sleepiness++;
     if ( sleepiness < 0 ) {
         sleepiness = 0;
-        $(".sleepiness").text(`SLEPPINESS: 0`)
+        $(".sleepiness").text(`SLEEPINESS: 0`)
     }
-    $(".sleepiness").text(`SLEPPINESS: ${sleepiness}`);
+    $(".sleepiness").text(`SLEEPINESS: ${sleepiness}`);
     if ( sleepiness === 10 ) {
         gameOver();
         $("#staticBackdrop").modal('show');
@@ -167,7 +167,7 @@ const gameOver = (event) => {
         $(".giphy-initial").attr("src", `https://giphy.com/embed/116a8zosxwA0SI`)
 
         $(".hunger").text(`HUNGER: ${hunger}`);
-        $(".sleepiness").text(`SLEPPINESS: ${sleepiness}`);
+        $(".sleepiness").text(`SLEEPINESS: ${sleepiness}`);
         $(".boredom").text(`BOREDOM: ${boredom}`);
         $(".petlevel").text(`LEVEL: ${level}`);
         
@@ -207,7 +207,7 @@ const  missionComplete= (event) => {
         $(".giphy-initial").attr("src", `https://giphy.com/embed/116a8zosxwA0SI`)
 
         $(".hunger").text(`HUNGER: ${hunger}`);
-        $(".sleepiness").text(`SLEPPINESS: ${sleepiness}`);
+        $(".sleepiness").text(`SLEEPINESS: ${sleepiness}`);
         $(".boredom").text(`BOREDOM: ${boredom}`);
         $(".petlevel").text(`LEVEL: ${level}`);
         
@@ -231,7 +231,7 @@ $('.button_feed').on('click', (event) => {
 
 $('.button_sleep').on('click', (event) => {
     sleepiness --;
-    $(".sleepiness").text(`SLEPPINESS: ${sleepiness}`);
+    $(".sleepiness").text(`SLEEPINESS: ${sleepiness}`);
 });
 
 $('.button_play').on('click', (event) => {
